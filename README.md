@@ -12,7 +12,7 @@ code snippets.
 ## Table of Contents
 
 1. [Tutorial 0: Environment Setup & Introduction to Git](tutorial-0/README.md)
-2. [Tutorial 1: TBD](#)
+2. [Tutorial 1: Strategy & Observer Pattern](tutorial-1/README.md)
 3. [Tutorial 2: TBD](#)
 4. [Tutorial 3: TBD](#)
 5. [Tutorial 4: TBD](#)
@@ -27,19 +27,21 @@ code snippets.
 
 First week of the tutorial:
 
-1. Create a new project on GitLab to store all tutorial work, e.g. `advprog-tutorial`
+1. Create a new project on GitLab to store all tutorial work, e.g.
+`advprog-tutorial`
 2. Note the clone (HTTPS) URL of the repository on your new project
 3. Clone the repository to your local machine
     - `git clone https://gitlab.com/<YOURNAME>/advprog-tutorial.git`
 4. Go to the GitLab project page of this (problem set) tutorial repository
 5. Note the clone (HTTPS) URL
 6. Back to your local tutorial work repository, add new remote named `upstream`
-that points to this repository
-    - `git remote add upstream https://gitlab.com/csui-advprog-2018/lab.git`
-7. Pull initial problem sets from `upstream`
-    - `git pull upstream master`
-8. Push initial problem sets to your own online Git repository on GitLab
-    - `git push -u origin master`
+that points to this repository:
+`git remote add upstream https://gitlab.com/csui-advprog-2018/lab.git`
+7. Pull initial problem sets from `upstream`: `git pull upstream master`
+    > If your Git produced an error about 'unrelated histories', try adding
+    > `--allow-unrelated-histories` option in `git pull` invocation
+8. Push initial problem sets to your own online Git repository on GitLab:
+`git push -u origin master`
 9. Tell us your GitLab username and URL to your tutorial work repository
 
 If there are updates from upstream:
