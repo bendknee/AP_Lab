@@ -11,7 +11,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     private int numReadings;
 
     public StatisticsDisplay(Observable observable) {
-        // TODO Complete me!
+        observable.addObserver(this);
     }
 
     @Override
@@ -23,7 +23,17 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     @Override
     public void update(Observable o, Object arg) {
         if (o instanceof WeatherData) {
-            // TODO Complete me!
+            WeatherData weatherData = (WeatherData) o;
+            float thisTemp = weatherData.getTemperature();
+            ++numReadings;
+            if (thisTemp > maxTemp) {
+                maxTemp = thisTemp;
+            }
+            if (thisTemp < minTemp) {
+                minTemp = thisTemp;
+            }
+            tempSum += thisTemp;
+            display();
         }
     }
 }
