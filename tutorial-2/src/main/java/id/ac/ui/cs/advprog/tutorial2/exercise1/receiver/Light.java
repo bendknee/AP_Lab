@@ -29,8 +29,7 @@ public class Light {
     public boolean isLit() {
         if (lit) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

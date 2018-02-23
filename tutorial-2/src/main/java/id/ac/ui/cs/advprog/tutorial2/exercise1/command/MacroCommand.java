@@ -20,7 +20,7 @@ public class MacroCommand implements Command {
 
     @Override
     public void undo() {
-        for (int i = commands.size()-1 ; i > -1 ; i--) {
+        for (int i = commands.size() - 1; i > -1; i--) {
             commands.get(i).undo();
         }
     }
