@@ -2,13 +2,13 @@ package id.ac.ui.cs.advprog.tutorial3.decorator.bread;
 
 import id.ac.ui.cs.advprog.tutorial3.decorator.Food;
 
-public class CrustySandwich extends Food {
-    public CrustySandwich() {
-        super.description = "Crusty Sandwich";
+public class NoCrustSandwich extends Food{
+    public NoCrustSandwich(){
+        super.description = "No Crust Sandwich";
     }
 
     @Override
     public double cost() {
-        return 1.0;
+        return 2.0;
     }
 }

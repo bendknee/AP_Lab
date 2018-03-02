@@ -1,7 +1,7 @@
 package id.ac.ui.cs.advprog.tutorial3.composite;
 
-import id.ac.ui.cs.advprog.tutorial3.composite.higherups.Ceo;
-import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.BackendProgrammer;
+import id.ac.ui.cs.advprog.tutorial3.composite.higherups.*;
+import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.*;
 
 import org.junit.Before;
 import org.junit.Test;
