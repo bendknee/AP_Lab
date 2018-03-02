@@ -16,5 +16,4 @@ public class BackendProgrammer extends Employees {
     public double getSalary() {
         return salary;
     }
-
 }
