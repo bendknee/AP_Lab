@@ -2,8 +2,8 @@ package id.ac.ui.cs.advprog.tutorial3.decorator.bread;
 
 import id.ac.ui.cs.advprog.tutorial3.decorator.Food;
 
-public class NoCrustSandwich extends Food{
-    public NoCrustSandwich(){
+public class NoCrustSandwich extends Food {
+    public NoCrustSandwich() {
         super.description = "No Crust Sandwich";
     }
 

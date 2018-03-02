@@ -4,9 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import id.ac.ui.cs.advprog.tutorial3.composite.higherups.Ceo;
 import id.ac.ui.cs.advprog.tutorial3.composite.higherups.Cto;
-
 import java.util.List;
-
 import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.BackendProgrammer;
 import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.FrontendProgrammer;
 import id.ac.ui.cs.advprog.tutorial3.composite.techexpert.NetworkExpert;
