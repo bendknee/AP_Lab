@@ -2,10 +2,10 @@ package id.ac.ui.cs.advprog.tutorial4.exercise1;
 
 import static org.junit.Assert.assertEquals;
 
-
 import id.ac.ui.cs.advprog.tutorial4.exercise1.pizza.Pizza;
+
 import org.junit.Before;
-import org.junit.After;
+
 import org.junit.Test;
 
 
