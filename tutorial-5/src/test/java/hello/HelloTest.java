@@ -25,4 +25,10 @@ public class HelloTest {
         mockMvc.perform(get("/hello"))
                 .andExpect(content().string(containsString("My Hello for, Budi!")));
     }
+
+    @Test
+    public void greetingWithUser() throws Exception {
+        mockMvc.perform(get("/hello").param("initial", "Greg"))
+                .andExpect(content().string(containsString("My Hello for, Greg!")));
+    }
 }
