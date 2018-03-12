@@ -48,7 +48,7 @@ test:t4:
     - branches@csui-advprog-2018/lab
 
 # Tutorial 5 CI jobs
-test:t4:
+test:t5:
   stage: test
   script: gradle :tutorial-5:check
   only:
