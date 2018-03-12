@@ -26,8 +26,7 @@ unit tests without permission from the teaching team!**
 There are several classes that contain example implementation of Spring Boot
 Application. Basically the Application is a simple greeting example. When you access the URL 
 `/greeting` with parameter name (e.g. `/greeting?name=Budi`) it will return some sentence
-with `Budi` name in it. If it's without parameter then it will be given a default sentence.
-If you access the root URL, it will return Homepage that defined in 
+with `Budi` name in it. If you access the root URL, it will return Homepage that defined in 
 `resources/static/index.html`.
 
 To understand this template, there are some classes that you need to observe :

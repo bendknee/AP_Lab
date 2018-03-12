@@ -57,6 +57,6 @@ test:t5:
     - branches@csui-advprog-2018/lab
   artifacts:
       paths:
-      - /tutorial-5/build/reports/tests/test/*
+      - /tutorial-5/build/reports/tests/test/
       expire_in: 1 week
 
