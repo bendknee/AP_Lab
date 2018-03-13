@@ -8,7 +8,7 @@ Indonesia, Term 2 2017/2018
 Your main task in this tutorial is to create a simple application with Spring Boot. 
 You also have to relate it with Model-View-Controller Pattern that explained in Head
 First Design Pattern Book **Chapter 12**. The problem set used in this tutorial is 
-based on example for creating and learning Spring Boot Application. More advanced tutorial
+based on example for creating and learning Spring Boot application. More advanced tutorial
 can be found at [Github](https://github.com/spring-guides)
 
 The evaluation of your work will be based on the implementation of requested feature,
@@ -25,7 +25,7 @@ unit tests without permission from the teaching team!**
 
 There are several classes that contain example implementation of Spring Boot
 Application. Basically the Application is a simple greeting example. When you access the URL 
-`/greeting` with parameter name (e.g. `/greeting?name=Budi`) it will return some sentence
+`/greeting` with parameter `name` (e.g. `/greeting?name=Budi`) it will return some sentence
 with `Budi` name in it. If you access the root URL, it will return Homepage that defined in 
 `resources/static/index.html`.
 
@@ -35,7 +35,7 @@ To understand this template, there are some classes that you need to observe :
 2. GreetingController
 
 You also have to understand how the HTML page is rendered, you need to know how 
-HTML templating in Spring Boot work, in this case we're gonna use 
+HTML templating in Spring Boot work, in this case we're going use 
 [Thymeleaf](http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html). 
 
 **Attention: this tutorial would be much easier if you use Intellij IDEA Jetbrains, 
@@ -49,32 +49,32 @@ going to have to do these steps:
 1. Find `build.gradle` file inside folder `tutorial-5`
 1. Set your Gradle home by pointing it to your Gradle installation folder
 1. Click ok and wait while your Dependencies is being imported
-1. If above steps is success, then you're gonna be able to run the Spring Boot application
+1. If above steps is success, then you're going be able to run the Spring Boot application
 from inside the Intellij IDEA (by clicking icon Run with configuration named `Application`).
 The alternative way to find out that your dependencies is already imported, is by running the test task.
 Go to your console and run `gradle :tutorial-5:check`
 1. If you don't see any error, then check it on your Web Browser by accessing `http://localhost:8000`.
-You're gonna be able to see the Homepage.
+You're going be able to see the Homepage.
 
 The following sections describe the tasks required in order to complete
 each pattern implementation.
 
 After you run the prepared template, now you must try to implement some simple Web Application.
-You must create a simple Webpage that provide your **Curriculum Vitae**. Here's what you
+You must create a simple Webpage that provide your **Curriculum Vitae**. Here is what you
 need to provide in your Webpage:
 
 1. Basic Information (Name, Birthdate & Birthplace, Address)
 2. Education History
 3. 1 Paragraph that describe you
 4. When the URL of your CV is accessed with parameter `visitor` (e.g.
-: Danny), the title will be `Danny, I hope you interested to hire me`. If there's 
+: Danny), the title will be `Danny, I hope you interested to hire me`. If there is 
 no parameter, then the title will be `This is my CV`.
 
 
 The available template is really basic HTML template, and we hope that as most of you
 already taken Web Programming Course, your webpage won't be as "Plain" as the current state.
 You also need to implement Test Cases to complete this tutorial, because Code Coverage
-is also being counted as one of mandatory task. Here's what you can do to check your 
+is also being counted as one of mandatory task. Here is what you can do to check your 
 Code Coverage:
 
 1. Run your test (`gradle :tutorial-5:check`). After that there are a generated folder
@@ -82,8 +82,8 @@ named `build` (in Intellij IDEA it's colored by orange). Inside folder `build` t
 so many folder, but what you need to observe is `reports/tests/test/index.html`. That file
 will show you your Code Coverage.
 1. You can use Code Coverage Tool inside Intellij IDEA. To do this, you only need to
-right click folder `test` and Click `Run 'All Tests' with Coverage`. (**Warning: There's a chance that
-Code Coverage shown in this step is different with runnin manually in command line. Use the 1st step
+right click folder `test` and Click `Run 'All Tests' with Coverage`. (**Warning: there is a chance that
+Code Coverage shown in this step is different with running manually in command line. Use the 1st step
 as the main Code Coverage in case there are a differences.**)
 
 **Reminder: You don't need to delete the available implementation. Just create a new Class
@@ -129,7 +129,7 @@ prefer terminal/shell:
 gradle :tutorial-5:test
 ```
 
-> Explanation: Run `test` task available in `tutorial-4` Gradle (sub)project
+> Explanation: Run `test` task available in `tutorial-5` Gradle (sub)project
 
 If you want to run code linter (Checkstyle) to check find code style issues in
 your work, execute `checkstyleMain` Gradle task from your IDE or via
@@ -162,7 +162,8 @@ produce any warning when you execute `check` or `checkstyleMain` Gradle
 tasks
 - [ ] Make sure that you have 100% Code Coverage
 - [ ] Unit Tests that are created must have a good quality
-- [ ] Why Spring Boot can be used as an example for Model-View-Controller Pattern
+- [ ] Explain in several paragraphs Why Spring Boot can be used as an example 
+for Model-View-Controller Pattern
     - Explain what is Model-View-Controller Pattern in 1 sentence
     - Where is Model, View, and Controller in Spring Boot Framework
     - Write your answer in [My Notes](#my-notes) section in this document
