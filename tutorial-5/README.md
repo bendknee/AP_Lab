@@ -193,6 +193,15 @@ Database [Here](https://github.com/spring-guides/gs-accessing-data-mysql)
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+1. Explain what is Model-View-Controller Pattern in 1 sentence
+    Model View Controller or MVC as it is popularly called, 
+    is a software design pattern for developing web applications.
+2. Where is Model, View, and Controller in Spring Boot Framework
+    View is located on resoures directory. Where programmer can insert their html and css and js required.
+    Controller and Model is declared on Java directory in a package form. The difference between both
+        are @Entity declaration is used to define a model class whilst @Controller declaration is used
+        to define a controller class.
+3. Explain in several paragraphs Why Spring Boot can be used as an example 
+   for Model-View-Controller Pattern
+    Because it utilizes Model, View, and Controller components. And more importantly, those three
+    components are integrated but parallel. Which means programmer can start working from anywhere, top or bottom.
