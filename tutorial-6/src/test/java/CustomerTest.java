@@ -1,26 +1,36 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class CustomerTest {
 
-    // TODO: Remove redundancy in setting up test fixture in each test methods
-    // Hint: Make the test fixture into an instance variable
+    private Customer customer;
+    private Rental rental1;
+    private Rental rental2;
+    private Movie movie1;
+    private Movie movie2;
+
+    @Before
+    public void setUp() {
+        customer = new Customer("Alice");
+        movie1 = new Movie("Who Killed Captain Alex?", Movie.REGULAR);
+        movie2 = new Movie("Doctor Strange", Movie.NEW_RELEASE);
+        rental1 = new Rental(movie1, 3);
+        rental2 = new Rental(movie2, 5);
+        customer.addRental(rental1);
+    }
+
 
     @Test
     public void getName() {
-        Customer customer = new Customer("Alice");
-
         assertEquals("Alice", customer.getName());
     }
 
     @Test
     public void statementWithSingleMovie() {
-        Movie movie = new Movie("Who Killed Captain Alex?", Movie.REGULAR);
-        Rental rent = new Rental(movie, 3);
-        Customer customer = new Customer("Alice");
-        customer.addRental(rent);
-
         String result = customer.statement();
         String[] lines = result.split("\n");
 
@@ -29,8 +39,14 @@ public class CustomerTest {
         assertTrue(result.contains("1 frequent renter points"));
     }
 
-    // TODO Implement me!
+    @Test
     public void statementWithMultipleMovies() {
-        // TODO Implement me!
+        customer.addRental(rental2);
+        String result = customer.statement();
+        String[] lines = result.split("\n");
+
+        assertEquals(5, lines.length);
+        assertTrue(result.contains("Amount owed is 18.5"));
+        assertTrue(result.contains("3 frequent renter points"));
     }
 }
