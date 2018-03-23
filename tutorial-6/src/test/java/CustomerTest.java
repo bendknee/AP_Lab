@@ -49,4 +49,26 @@ public class CustomerTest {
         assertTrue(result.contains("Amount owed is 18.5"));
         assertTrue(result.contains("3 frequent renter points"));
     }
+
+    @Test
+    public void htmlStatementWithSingleMovie() {
+        String result = customer.htmlStatement();
+        String[] lines = result.split("<br />");
+
+        assertEquals(4, lines.length);
+        assertTrue(result.contains("Amount owed is 3.5"));
+        assertTrue(result.contains("1 frequent renter points"));
+    }
+
+    @Test
+    public void htmlStatementWithMultipleMovies() {
+        customer.addRental(rental2);
+        String result = customer.htmlStatement();
+        String[] lines = result.split("<br />");
+
+        assertEquals(5, lines.length);
+        assertTrue(result.contains("Amount owed is 18.5"));
+        assertTrue(result.contains("3 frequent renter points"));
+    }
+
 }

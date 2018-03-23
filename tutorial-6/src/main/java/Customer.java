@@ -27,8 +27,7 @@ class Customer {
             Rental each = iterator.next();
 
             // Show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(each.getCharge()) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
         }
 
         // Add footer lines
@@ -37,6 +36,28 @@ class Customer {
 
         return result;
     }
+
+    public String htmlStatement() {
+        Iterator<Rental> iterator = rentals.iterator();
+        String result = "Rental Record for " + getName() + "<br />";
+
+        while (iterator.hasNext()) {
+            Rental each = iterator.next();
+            double thisAmount = each.getCharge();
+
+            // Show figures for this rental
+            result += "&emsp;" + each.getMovie().getTitle() + "&emsp;" + String.valueOf(thisAmount) + "<br />";
+        }
+
+        // Add footer lines
+        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "<br />";
+        result += "You earned "
+                + String.valueOf(getTotalFrequentRenterPoints())
+                + " frequent renter points";
+
+        return result;
+    }
+
 
     private double getTotalCharge() {
         double result = 0;
