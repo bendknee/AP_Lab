@@ -1,17 +1,18 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static java.util.stream.Collectors.groupingBy;
+
 
 /**
  * 3rd exercise.
  */
 public class ScoreGrouping {
 
-    public static Map<Integer, List<String>> groupByScores(
-            Map<String, Integer> scores) {
+    public static Map<Integer, List<String>> groupByScores(Map<String, Integer> scores) {
 
-        Map<Integer, List<String>> byScores = new HashMap<>();
+        /*Map<Integer, List<String>> byScores = new HashMap<>();
 
         for (String name : scores.keySet()) {
             int score = scores.get(name);
@@ -26,7 +27,11 @@ public class ScoreGrouping {
             byScores.put(score, names);
         }
 
-        return byScores;
+        return byScores;*/
+
+        // {11=[Charlie, Foxtrot], 12=[Alice], 15=[Emi, Bob, Delta]}
+
+        return scores.keySet().stream().collect(groupingBy(scores::get));
     }
 
     public static void main(String[] args) {

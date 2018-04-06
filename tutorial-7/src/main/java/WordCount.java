@@ -1,5 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +19,9 @@ public class WordCount {
             }
         }
 
-        reader.close(); // The word substring 'for' occurred in 6 lines*/
+        reader.close(); */
+
+        // The word substring 'for' occurred in 6 lines
 
         return Files.lines(file).filter(line -> line.contains(word)).count();
     }
