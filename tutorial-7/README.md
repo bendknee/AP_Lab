@@ -165,6 +165,18 @@ into functional style
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Exercise 1: Reduced 7 LOC
+Exercise 2: Reduced 11 LOC
+Exercise 3: Reduced 14 LOC
+Exercise 4: Reduced **6 Classes**
+By this declarative programming, the code is more concise in the way that it
+eliminates flags, iterations, and conditions by a single nested method.
+
+
+Being a Computer Science student we have been taught to code in the best practice possible.
+Which is another way to say every CS students begin to code in the imperative way in this case.
+Java 8's declarative syntax are quite intimidating in the way that it contains much much more library
+to use, to learn, to memorize. But as I am using an IDE, searching through the library functions
+is quite easy by an automatic panel the IDE always generates when I make a new object.
+You code less yet you can do more, that's what declarative programming is all about. All a programmer
+requires to a language is to be familiar, not to be an expert.

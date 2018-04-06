@@ -2,10 +2,10 @@ package applicant;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.function.Predicate;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.function.Predicate;
 
 public class ApplicantTest {
 
@@ -46,6 +46,7 @@ public class ApplicantTest {
     @Test
     public void testQuadrupleEvaluation() {
         assertEquals("Result of evaluating applicant: rejected", Applicant.evaluate(
-                applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator.and(criminalEvaluator)))));
+                applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator.and(
+                        criminalEvaluator)))));
     }
 }

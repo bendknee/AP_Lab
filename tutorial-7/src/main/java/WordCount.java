@@ -5,8 +5,8 @@ import java.nio.file.Paths;
 /**
  * 2nd exercise.
  */
-public class WordCount {
 
+public class WordCount {
     public static long countLines(String word, Path file) throws IOException {
         /*long count = 0;
 
@@ -20,8 +20,6 @@ public class WordCount {
         }
 
         reader.close(); */
-
-        // The word substring 'for' occurred in 6 lines
 
         return Files.lines(file).filter(line -> line.contains(word)).count();
     }

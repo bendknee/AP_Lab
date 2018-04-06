@@ -1,9 +1,8 @@
+import static java.util.stream.Collectors.groupingBy;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static java.util.stream.Collectors.groupingBy;
-
 
 /**
  * 3rd exercise.
@@ -28,8 +27,6 @@ public class ScoreGrouping {
         }
 
         return byScores;*/
-
-        // {11=[Charlie, Foxtrot], 12=[Alice], 15=[Emi, Bob, Delta]}
 
         return scores.keySet().stream().collect(groupingBy(scores::get));
     }

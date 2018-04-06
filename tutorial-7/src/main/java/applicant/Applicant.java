@@ -24,20 +24,25 @@ public class Applicant {
     }
 
     public static String evaluate(Applicant applicant, Predicate<Applicant> evaluator) {
-        return "Result of evaluating applicant: ".concat(evaluator.test(applicant) ? "accepted" : "rejected");
+        return "Result of evaluating applicant: ".concat(
+                evaluator.test(applicant) ? "accepted" : "rejected");
     }
 
     public static void main(String[] args) {
         Applicant applicant = new Applicant();
         Predicate<Applicant> qualifiedEvaluator = Applicant::isCredible;
         Predicate<Applicant> creditEvaluator = anApplicant -> anApplicant.getCreditScore() > 600;
-        Predicate<Applicant> employmentEvaluator = anApplicant -> anApplicant.getEmploymentYears() > 0;
+        Predicate<Applicant> employmentEvaluator = anApplicant ->
+                anApplicant.getEmploymentYears() > 0;
         Predicate<Applicant> criminalEvaluator = anApplicant -> !anApplicant.hasCriminalRecord();
 
         System.out.println(evaluate(applicant, qualifiedEvaluator.and(creditEvaluator)));
-        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator))));
-        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(criminalEvaluator))));
-        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator.and(criminalEvaluator)))));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(
+                employmentEvaluator.and(creditEvaluator))));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(
+                employmentEvaluator.and(criminalEvaluator))));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(
+                employmentEvaluator.and(creditEvaluator.and(criminalEvaluator)))));
 
         /*System.out.println(evaluate(applicant, new CreditEvaluator(new QualifiedEvaluator())));
         System.out.println(evaluate(applicant,
