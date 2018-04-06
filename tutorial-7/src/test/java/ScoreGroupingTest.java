@@ -36,6 +36,11 @@ public class ScoreGroupingTest {
         unique.put("Foxtrot", 14);
     }
 
+    @Before
+    public void coverageMain() {
+        ScoreGrouping.main(new String[]{});
+    }
+
     @Test
     public void testDefaultDataset() {
         assertEquals("{11=[Charlie, Foxtrot], 12=[Alice], 15=[Emi, Bob, Delta]}",

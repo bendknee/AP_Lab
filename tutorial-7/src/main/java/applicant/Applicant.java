@@ -1,5 +1,7 @@
 package applicant;
 
+import java.util.function.Predicate;
+
 /**
  * 4th exercise.
  */
@@ -21,28 +23,31 @@ public class Applicant {
         return true;
     }
 
-    public static boolean evaluate(Applicant applicant, Evaluator evaluator) {
-        return evaluator.evaluate(applicant);
-    }
-
-    private static void printEvaluation(boolean result) {
-        String msg = "Result of evaluating applicant: %s";
-        msg = result ? String.format(msg, "accepted") : String.format(msg, "rejected");
-
-        System.out.println(msg);
+    public static String evaluate(Applicant applicant, Predicate<Applicant> evaluator) {
+        return "Result of evaluating applicant: ".concat(evaluator.test(applicant) ? "accepted" : "rejected");
     }
 
     public static void main(String[] args) {
         Applicant applicant = new Applicant();
-        printEvaluation(evaluate(applicant, new CreditEvaluator(new QualifiedEvaluator())));
-        printEvaluation(evaluate(applicant,
+        Predicate<Applicant> qualifiedEvaluator = Applicant::isCredible;
+        Predicate<Applicant> creditEvaluator = anApplicant -> anApplicant.getCreditScore() > 600;
+        Predicate<Applicant> employmentEvaluator = anApplicant -> anApplicant.getEmploymentYears() > 0;
+        Predicate<Applicant> criminalEvaluator = anApplicant -> !anApplicant.hasCriminalRecord();
+
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(creditEvaluator)));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator))));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(criminalEvaluator))));
+        System.out.println(evaluate(applicant, qualifiedEvaluator.and(employmentEvaluator.and(creditEvaluator.and(criminalEvaluator)))));
+
+        /*System.out.println(evaluate(applicant, new CreditEvaluator(new QualifiedEvaluator())));
+        System.out.println(evaluate(applicant,
                 new CreditEvaluator(new EmploymentEvaluator(new QualifiedEvaluator()))));
-        printEvaluation(evaluate(applicant,
+        System.out.println(evaluate(applicant,
                 new CriminalRecordsEvaluator(
                         new EmploymentEvaluator(new QualifiedEvaluator()))));
-        printEvaluation(evaluate(applicant,
+        System.out.println(evaluate(applicant,
                 new CriminalRecordsEvaluator(
                         new CreditEvaluator(
-                                new EmploymentEvaluator(new QualifiedEvaluator())))));
+                                new EmploymentEvaluator(new QualifiedEvaluator())))));*/
     }
 }
