@@ -151,6 +151,14 @@ and `java.util.Observer`
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+1. Java's Collections utilizes the Strategy pattern especially in 'Collections.sort'. In a manner
+    that a class should implement the Comparable interface first then define the sorting
+    algorithm by overriding the compareTo method. Then that class could be compared to itself.
+2. Java's 'java.util.Observable' and 'java.util.Observer' is  a class, not an interface.
+    Note that one class could only inherit a single class only. This means that we could not
+    inherit other class if we have assigned that class to be a Subject. Meanwhile programmer
+    can't add Observable behaviours without inheriting it. And since there's no Observable
+    interface, programmer can't (hardly) create the right implementation to fit in with
+    Observable's partner, the Observer API.
+    That means hard coding your own Subject-Observer implementation would give you the
+    advantage of getting more OOP experience which is Inheritance.
