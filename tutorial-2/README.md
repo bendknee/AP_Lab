@@ -209,6 +209,12 @@ modified to use Stream API
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+   All ceiling fan commands in the Head First book did not use an abstract class.
+This means any repetitions such as the constructor and the 'undo' method on all fan 
+speed commands are re-written on each concrete class. Since all fan-speed class
+differ only on its, obviously, speed, it is recommended to make a template (abstract)
+class that contains all methods except the 'execute' method left being abstract since
+it will be implemented by each speed's class. This technique we used in this exercise
+is called Template Method Pattern since there's an empty method that needs
+implementation from its subclass(es), but the other 'primitive' methods stay in the
+abstract class since it have no difference on all subclass anyway.
