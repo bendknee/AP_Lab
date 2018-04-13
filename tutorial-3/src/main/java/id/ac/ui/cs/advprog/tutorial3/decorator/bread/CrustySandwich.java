@@ -4,11 +4,11 @@ import id.ac.ui.cs.advprog.tutorial3.decorator.Food;
 
 public class CrustySandwich extends Food {
     public CrustySandwich() {
-        //TODO Implement
+        super.description = "Crusty Sandwich";
     }
 
     @Override
     public double cost() {
-        //TODO Implement
+        return 1.0;
     }
 }

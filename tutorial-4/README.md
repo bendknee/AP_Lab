@@ -158,6 +158,44 @@ a Singleton object and describe the pros/cons of both approaches
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Lazy-Instantiation :
+```java
+public class Singleton {
+
+    private static Singleton uniqueInstance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Singleton();
+        }
+        return uniqueInstance;
+    }
+}
+```
+
+Eager-Instantiation :
+```java
+public class Singleton {
+
+    private static Singleton uniqueInstance = new Singleton();
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        return uniqueInstance;
+    }
+}
+```
+
+As you can see, in eager instantiation, the Singleton single instance is
+instantiated at compile time whilst in lazy instantiation is instantiated
+at runtime. This could mean some ups and downs on both sides.
+
+Lazy Pros : Using less memory resource, less expensive. Exceptions handling friendly.
+Lazy Cons : Bug-prone when there are 2 JVMs running the same Singleton.
+    Multiple instantiation could occur.
+Eager Pros : Handles the Bug-prone issue that Lazy has.
+Eager Cons: Expensive, using too much time and space at the first instantiation.
+    Hard to handle exceptions.

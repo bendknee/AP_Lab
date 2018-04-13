@@ -2,7 +2,7 @@ package id.ac.ui.cs.advprog.tutorial2.exercise1.command;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.stream.Stream;
 
 public class MacroCommand implements Command {
 
@@ -14,11 +14,14 @@ public class MacroCommand implements Command {
 
     @Override
     public void execute() {
-        // TODO Complete me!
+        Stream<Command> cmdStream = commands.stream();
+        cmdStream.forEach(Command::execute);
     }
 
     @Override
     public void undo() {
-        // TODO Complete me!
+        for (int i = commands.size() - 1; i > -1; i--) {
+            commands.get(i).undo();
+        }
     }
 }
