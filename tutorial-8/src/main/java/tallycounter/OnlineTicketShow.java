@@ -30,7 +30,7 @@ public class OnlineTicketShow implements Runnable {
         try {
             for (int i = maxTicketOrdered; i > 0; i--) {
                 System.out.println("Website: " + websiteName
-                        + ", have sold" + (maxTicketOrdered - i + 1));
+                        + ", have sold " + (maxTicketOrdered - i + 1));
                 // Let the thread sleep for a while.
                 Thread.sleep(buyingRateinMiliSecond);
                 tallyCounterReference.increment();
