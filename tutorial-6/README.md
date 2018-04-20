@@ -129,23 +129,23 @@ gradle :tutorial-6:checkstyleTest
 
 ## Mandatory Tasks Checklist
 
-- [ ] Refactor `statement()` method in `Customer` class
-- [ ] Make at least 3 commits that contains your progress in refactoring
+- [X] Refactor `statement()` method in `Customer` class
+- [X] Make at least 3 commits that contains your progress in refactoring
 `statement()` method in `Customer` class
-- [ ] Refactor test classes
-- [ ] Make at least 1 commit that contains your progress in refactoring
+- [X] Refactor test classes
+- [X] Make at least 1 commit that contains your progress in refactoring
 test classes
-- [ ] Ensure the tests still pass after each refactoring
-- [ ] Push your commits to online Git repository on your GitLab project
+- [X] Ensure the tests still pass after each refactoring
+- [X] Push your commits to online Git repository on your GitLab project
 
 ## Additional Tasks Checklist
 
-- [ ] Make sure there are no code style issues, both in production code and
+- [X] Make sure there are no code style issues, both in production code and
 test code
-- [ ] Implement `htmlStatement()` method in `Customer` class
-- [ ] Create tests for testing `htmlStatement()` method using JUnit 4
-- [ ] Ensure 100% code coverage
-- [ ] Reflect on the refactoring activities that you have done and answer the
+- [X] Implement `htmlStatement()` method in `Customer` class
+- [X] Create tests for testing `htmlStatement()` method using JUnit 4
+- [X] Ensure 100% code coverage
+- [X] Reflect on the refactoring activities that you have done and answer the
 following questions:
     - What are the benefits of refactoring based on your observation?
     - What are the bad qualities observed in the code if we did not refactor
@@ -157,6 +157,12 @@ following questions:
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+Ups :   Mode readable code, more modular, especially more maintainable since it prevents
+        unwanted bugs from editing the inside of a method.
+Downs : Expensive. Expensive in space and time resource. Not forget to mention that the
+        previous code contains so much redundancy (duplicates). That code alone could 
+        enrage so many programmers (not rly) but it's true. You hate it when you have to
+        read through your colleagues untidy/unfactored lines of codes.
+
+If there are some changes in calculation, it will take more time to change the code. Since
+there's still so much to alter such as the switch statement, and methods to MOVE to other classes.
