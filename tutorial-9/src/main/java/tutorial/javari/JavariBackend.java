@@ -1,11 +1,5 @@
 package tutorial.javari;
 
-import org.json.JSONObject;
-import tutorial.javari.animal.Animal;
-import tutorial.javari.animal.Condition;
-import tutorial.javari.animal.Gender;
-
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -13,6 +7,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.json.JSONObject;
+
+import tutorial.javari.animal.Animal;
+import tutorial.javari.animal.Condition;
+import tutorial.javari.animal.Gender;
 
 public class JavariBackend {
 
@@ -22,15 +21,15 @@ public class JavariBackend {
     public JavariBackend() {
         Scanner scanner;
         try {
-            scanner = new Scanner(new FileReader("tutorial-9/src/main/java/tutorial/javari/animals_records.csv"));
+            scanner = new Scanner(
+                    new FileReader("tutorial-9/src/main/java/tutorial/javari/animals_records.csv"));
             String line;
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 initJavariHelper(line);
             }
             scanner.close();
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
