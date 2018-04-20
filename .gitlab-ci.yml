@@ -97,3 +97,16 @@ test:t8:
   artifacts:
       paths:
       - /tutorial-8/build/*
+
+# Tutorial 9 CI jobs
+test:t9:
+  stage: test
+  script:
+  - gradle :tutorial-9:check
+  only:
+    - /.*tutorial[_-].*9$/
+  except:
+    - branches@csui-advprog-2018/lab
+  artifacts:
+      paths:
+      - /tutorial-9/build/*
