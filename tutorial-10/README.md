@@ -146,6 +146,6 @@ elapsed time.
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+The current benchmark test design is not really good to measure the elapsed time of algorithm, 
+because while the unit of time of the return value is a millisecond, the variance of the value 
+depends on the underlying operating system and other hardware specifications.

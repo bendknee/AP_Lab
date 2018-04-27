@@ -1,6 +1,8 @@
 package sorting;
 
 
+import java.util.Arrays;
+
 public class Sorter {
 
     /**
@@ -21,6 +23,11 @@ public class Sorter {
                 }
             }
         }
+        return inputArr;
+    }
+
+    public static int[] quickSort(int[] inputArr) {
+        Arrays.sort(inputArr);
         return inputArr;
     }
 

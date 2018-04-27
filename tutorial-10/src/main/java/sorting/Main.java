@@ -14,23 +14,63 @@ public class Main {
 
         int[] sequenceInput = convertInputFileToArray();
 
-        //Searching Input Before Sorting
+        //Searching Input Before Sorting With Slow Search
         long totalMilisSearchBeforeSort = System.currentTimeMillis();
         int searchingResultBeforeSort = Finder.slowSearch(sequenceInput, 40738);
         totalMilisSearchBeforeSort = System.currentTimeMillis() - totalMilisSearchBeforeSort;
-        System.out.println("Searching Complete in " + totalMilisSearchBeforeSort + " milisecond");
+        System.out.println("Slow Search Complete in " + totalMilisSearchBeforeSort + " milisecond");
 
-        //Sorting Input
-        long totalMilisSorting = System.currentTimeMillis();
-        int[] sortedInput = Sorter.slowSort(sequenceInput);
-        totalMilisSorting = System.currentTimeMillis() - totalMilisSorting;
-        System.out.println("Sorting Complete in " + totalMilisSorting + " milisecond");
+        //Searching Input Before Sorting With Improved Slow Search
+        long totalMilisImprovedSearchBeforeSort = System.currentTimeMillis();
+        int searchingImprovedResultBeforeSort = Finder.slowSearchImproved(sequenceInput, 40738);
+        totalMilisImprovedSearchBeforeSort = System.currentTimeMillis() - totalMilisImprovedSearchBeforeSort;
+        System.out.println("Improved Slow Search Complete in " + totalMilisImprovedSearchBeforeSort + " milisecond");
 
-        //Searching Input After Sorting
-        long totalMilisSearchAfterSort = System.currentTimeMillis();
-        int searchingResultAfterSort = Finder.slowSearch(sequenceInput, 40738);
-        totalMilisSearchAfterSort = System.currentTimeMillis() - totalMilisSearchAfterSort;
-        System.out.println("Searching Complete in " + totalMilisSearchAfterSort + " milisecond");
+        //Sorting Input With Slow Sort
+        long totalMilisSlowSorting = System.currentTimeMillis();
+        int[] slowSortedInput = Sorter.slowSort(sequenceInput);
+        totalMilisSlowSorting = System.currentTimeMillis() - totalMilisSlowSorting;
+        System.out.println("Slow Sort Complete in " + totalMilisSlowSorting + " milisecond");
+
+        //Searching Input After Slow Sorting With Slow Search
+        long totalMilisSlowSearchAfterSlowSort = System.currentTimeMillis();
+        int searchingSlowResultAfterSlowSort = Finder.slowSearch(slowSortedInput, 40738);
+        totalMilisSlowSearchAfterSlowSort = System.currentTimeMillis() - totalMilisSlowSearchAfterSlowSort;
+        System.out.println("Slow Search Complete in " + totalMilisSlowSearchAfterSlowSort + " milisecond");
+
+        //Searching Input After Slow Sorting With Fast Search
+        long totalMilisQuickSearchAfterSlowSort = System.currentTimeMillis();
+        int searchingQuickResultAfterSlowSort = Finder.quickSearch(slowSortedInput, 40738);
+        totalMilisQuickSearchAfterSlowSort = System.currentTimeMillis() - totalMilisQuickSearchAfterSlowSort;
+        System.out.println("Quick Search Complete in " + totalMilisQuickSearchAfterSlowSort + " milisecond");
+
+        //Reseting array
+        System.out.println("\nResetting Array. . . ");
+        sequenceInput = convertInputFileToArray();
+
+        //Searching Input Before Sorting With Improved Slow Search
+        totalMilisImprovedSearchBeforeSort = System.currentTimeMillis();
+        searchingImprovedResultBeforeSort = Finder.slowSearchImproved(sequenceInput, 40738);
+        totalMilisImprovedSearchBeforeSort = System.currentTimeMillis() - totalMilisImprovedSearchBeforeSort;
+        System.out.println("Improved Slow Search Complete in " + totalMilisImprovedSearchBeforeSort + " milisecond");
+
+        //Sorting Input With Quick Sort
+        long totalMilisQuickSorting = System.currentTimeMillis();
+        int[] quickSortedInput = Sorter.quickSort(sequenceInput);
+        totalMilisQuickSorting = System.currentTimeMillis() - totalMilisQuickSorting;
+        System.out.println("Quick Sort Complete in " + totalMilisQuickSorting + " milisecond");
+
+        //Searching Input After Quick Sorting With Slow Search
+        long totalMilisSlowSearchAfterQuickSort = System.currentTimeMillis();
+        int searchingSlowResultAfterQuickSort = Finder.slowSearch(quickSortedInput, 40738);
+        totalMilisSlowSearchAfterQuickSort = System.currentTimeMillis() - totalMilisSlowSearchAfterQuickSort;
+        System.out.println("Slow Search Complete in " + totalMilisSlowSearchAfterQuickSort + " milisecond");
+
+        //Searching Input After Quick Sorting With Fast Search
+        long totalMilisQuickSearchAfterQuickSort = System.currentTimeMillis();
+        int searchingQuickResultAfterQuickSort = Finder.quickSearch(quickSortedInput, 40738);
+        totalMilisQuickSearchAfterQuickSort = System.currentTimeMillis() - totalMilisQuickSearchAfterQuickSort;
+        System.out.println("Quick Search Complete in " + totalMilisQuickSearchAfterQuickSort + " milisecond");
     }
 
     /**
@@ -38,7 +78,7 @@ public class Main {
      * @return an array of integer that represent an integer sequence.
      * @throws IOException in the case of the file is not found because of the wrong path of file.
      */
-    private static int[] convertInputFileToArray() throws IOException {
+    public static int[] convertInputFileToArray() throws IOException {
         File sortingProblemFile = new File(pathFile);
         FileReader fileReader = new FileReader(sortingProblemFile);
         int[] sequenceInput = new int[numberOfItemToBeSorted];
