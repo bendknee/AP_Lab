@@ -45,10 +45,13 @@ subprojects {
         testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junit5_jupiter_version
         testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-launcher', version: junit5_platform_version
         testRuntimeOnly group: 'org.junit.vintage', name: 'junit-vintage-engine', version: junit5_vintage_version
+        // https://mvnrepository.com/artifact/org.json/json
+        compile group: 'org.json', name: 'json', version: '20131018'
     }
 
-    // Add Eclipse Gradle plugin
+    // Add IDE-specific plugins
     apply plugin: 'eclipse'
+    apply plugin: 'idea'
 }
 
 project(':tutorial-1') {
@@ -81,14 +84,22 @@ project(':tutorial-6') {
     }
 }
 
-project(':tutorial-3') {
+project(':tutorial-7') {
+    apply plugin: "jacoco"
+
     dependencies {
-        testCompile group: 'junit', name: 'junit', version: junit4_version
+        testImplementation group: 'junit', name: 'junit', version: junit4_version
     }
 }
 
-project(':tutorial-4') {
+project(':tutorial-8') {
     dependencies {
-        testCompile group: 'junit', name: 'junit', version: junit4_version
+        testImplementation group: 'junit', name: 'junit', version: junit4_version
+    }
+}
+
+project(':tutorial-9') {
+    dependencies {
+        testImplementation group: 'junit', name: 'junit', version: junit4_version
     }
 }
