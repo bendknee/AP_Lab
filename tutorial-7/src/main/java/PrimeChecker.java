@@ -1,10 +1,12 @@
+import java.util.stream.IntStream;
+
 /**
  * 1st exercise.
  */
 public class PrimeChecker {
 
     public static boolean isPrime(int number) {
-        boolean divisible = false;
+        /*boolean divisible = false;
 
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
@@ -13,7 +15,9 @@ public class PrimeChecker {
             }
         }
 
-        return number > 1 && !divisible;
+        return number > 1 && !divisible;*/
+
+        return number > 1 && IntStream.range(2, number).noneMatch(i -> number % i == 0);
     }
 
     public static void main(String[] args) {
