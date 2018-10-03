@@ -2,13 +2,13 @@ package tallycounter;
 
 public class OnlineTicketShow implements Runnable {
 
-    private TallyCounter tallyCounterReference;
+    private SynchronizedTallyCounter tallyCounterReference;
     private Thread thread;
     private int maxTicketOrdered;
     private String websiteName;
     private int buyingRateinMiliSecond;
 
-    public OnlineTicketShow(String websiteName, TallyCounter tallyCounterReference,
+    public OnlineTicketShow(String websiteName, SynchronizedTallyCounter tallyCounterReference,
                                  int maxTicketOrdered, int buyingRateinMiliSecond) {
         this.tallyCounterReference = tallyCounterReference;
         this.maxTicketOrdered = maxTicketOrdered;
@@ -30,7 +30,7 @@ public class OnlineTicketShow implements Runnable {
         try {
             for (int i = maxTicketOrdered; i > 0; i--) {
                 System.out.println("Website: " + websiteName
-                        + ", have sold" + (maxTicketOrdered - i + 1));
+                        + ", have sold " + (maxTicketOrdered - i + 1));
                 // Let the thread sleep for a while.
                 Thread.sleep(buyingRateinMiliSecond);
                 tallyCounterReference.increment();

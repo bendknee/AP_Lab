@@ -105,8 +105,18 @@ test:t10:
   - gradle :tutorial-10:check
   only:
     - /.*tutorial[_-].*10$/
+    
+# Tutorial 9 CI jobs
+test:t9:
+  stage: test
+  script:
+  - gradle :tutorial-9:check
+  only:
+    - /.*tutorial[_-].*9$/
+
   except:
     - branches@csui-advprog-2018/lab
   artifacts:
       paths:
       - /tutorial-10/build/*
+      - /tutorial-9/build/*
