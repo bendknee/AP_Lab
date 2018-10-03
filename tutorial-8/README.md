@@ -176,6 +176,6 @@ for the template code that he created in `Fraction` and `Main` class in Package 
 
 ## My Notes
 
-> Feel free to use this section to write your own notes related to your attempt
-> in doing the tutorial. You can also use this section to write text for
-> answering question(s) mentioned in the task checklists.
+The problem is within the thread when we increment or decrement the counter. 
+It is caused by race condition because we haven't implement the lock.
+Race condition occurs when two identical instructions queries the tally counter class.

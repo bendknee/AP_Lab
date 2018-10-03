@@ -2,11 +2,11 @@ package tallycounter;
 
 public class TallyCounterChecker implements Runnable {
 
-    private TallyCounter tallyCounterReference;
+    private SynchronizedTallyCounter tallyCounterReference;
     private Thread thread;
     private int sleepTime;
 
-    public TallyCounterChecker(TallyCounter tallyCounterReference, int sleepTime) {
+    public TallyCounterChecker(SynchronizedTallyCounter tallyCounterReference, int sleepTime) {
         this.tallyCounterReference = tallyCounterReference;
         this.sleepTime = sleepTime;
     }
